@@ -3,7 +3,11 @@ var app = express();
 app.use(express.logger());
 
 app.get('/', function(request, response) {
-  response.send('Hello World2!');
+	fs.writeFile('index.html', 'Hello Node', function (err) {
+  	if (err) throw err;
+  		console.log('It\'s saved!');
+});
+  //response.send('Hello World2!');
 });
 
 var port = process.env.PORT || 5000;
