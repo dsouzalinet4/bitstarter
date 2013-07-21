@@ -3,6 +3,7 @@ var app = express();
 app.use(express.logger());
 
 app.get('/', function(request, response) {
+	var fs = require('fs');
 	fs.writeFile('index.html', 'Hello Node', function (err) {
   	if (err) throw err;
   		console.log('It\'s saved!');
